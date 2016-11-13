@@ -1,0 +1,201 @@
+﻿@model PagedList.IPagedList<CongoFoot.Models.Article>
+@using PagedList.Mvc;
+@*<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />*@
+
+@*@model IEnumerable<CongoFoot.Models.Article>*@
+
+@{
+    ViewBag.Title = "Actu League des Champions";
+}
+
+<!-- Inner page Bar -->
+<div id="page-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12">
+                <div class="page-title">
+                    <h1 class="text-uppercase">Actu League des Champions</h1>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-12 text-right">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="fa fa-home" aria-hidden="true"></i> @Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, null)
+                    </li>
+                    <li class="active">League des Champions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Inner page Bar -->
+<!-- 3 Column video -->
+
+<div id="secondary-section" class="vids-3-column">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8">
+                <div class="st-3-column secondary-vid">
+                    <div class="vid-heading overflow-hidden">
+                        <span style="visibility: visible; animation-duration: 0.8s; animation-name: fadeInUp;" class="wow fadeInUp" data-wow-duration="0.8s">Actu League des Champions</span>
+                        <div style="visibility: visible; animation-duration: 0.8s; animation-name: zoomIn;" class="hding-bottm-line wow zoomIn" data-wow-duration="0.8s"></div>
+                    </div>
+                    <div class="row">
+                        <div class="vid-container">
+
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-md-4 col-sm-6">
+                                    <div class="latest-vid-img-container">
+                                        <div class="vid-img">
+                                            <img class="img-responsive" src="@Html.DisplayFor(modelItem => item.UrlImage)" alt="video image">
+                                            <div class="overlay-div"></div>
+                                        </div>
+                                        <div class="vid-text">
+                                            <p><span>Par</span> <a href="#">@Html.DisplayFor(modelItem => item.Auteur)</a></p>
+                                            <h1>@Html.ActionLink(item.Titre, "Details", new { id = item.ID })</h1>
+                                            <p class="vid-info-text">
+                                                <span>@Html.DisplayFor(modelItem => item.DatePublication)</span>
+                                                <span>/</span>
+                                                <span>
+                                                    @Html.DisplayFor(modelItem => item.Categorie)
+                                                </span>
+                                                <span>/</span>
+                                                <span>410 views</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+
+                        <!--  pagination START -->
+
+                        <div class="pagination-container text-center">
+                            @Html.PagedListPager(Model, page => Url.Action("C1",
+                           new
+                           {
+                               page,
+                               sortOrder = ViewBag.CurrentSort,
+                               currentFilter = ViewBag.CurrentFilter
+                           }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+                        </div>
+
+                        <!--  pagination END -->
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- bar lateral -->
+            <div class="col-md-3 col-sm-4">
+                <div class="sidebar">
+                    <div class="sidebar-vid most-liked">
+                        <h1 class="sidebar-heading">Fil Info</h1>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="~/Content/Images/most-liked-img-s1.jpg" alt="video">
+                            </div>
+                            <div class="media-body">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Journey</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="~/Content/Images/most-liked-img-s2.jpg" alt="video">
+                            </div>
+                            <div class="media-body">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Magic</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="~/Content/Images/most-liked-img-s3.jpg" alt="video">
+                            </div>
+                            <div class="media-body">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Runner</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="~/Content/Images/most-liked-img-s4.jpg" alt="video">
+                            </div>
+                            <div class="media-body">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Fantasy</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sidebar-vid most-viewd">
+                        <h1 class="sidebar-heading">Most Viewed</h1>
+                        <div class="most-viewd-container">
+                            <div class="most-viewd-img">
+                                <img class="img-responsive" src="~/Content/Images/most-viewd-1.jpg" alt="video">
+                            </div>
+                            <div class="most-viewd-text">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Human Rights Violation</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="most-viewd-container">
+                            <div class="most-viewd-img">
+                                <img class="img-responsive" src="~/Content/Images/most-viewd-2.jpg" alt="video">
+                            </div>
+                            <div class="most-viewd-text">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">War Video Compilation</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tags">
+                        <h1 class="sidebar-heading">Tags</h1>
+                        <ul class="list-inline list-unstyled">
+                            <li><a href="#">3D</a></li>
+                            <li><a href="#">Animals &amp; Birds</a></li>
+                            <li><a href="#">HD</a></li>
+                            <li><a href="#">Horror</a></li>
+                            <li><a href="#">Art</a></li>
+                            <li><a href="#">Self</a></li>
+                            <li><a href="#">HD Songs</a></li>
+                            <li><a href="#">Comedy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- bar lateral -->
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-- 3 Column Video -->

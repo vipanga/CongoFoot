@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title - CongoFoot</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+    <!-- Style Sheets -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="main-content">
+            <!-- Main Bar-->
+            <div id="main-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-5 col-xs-6 border-right">
+                            <div class="logo">
+                                <a href="http://layerstheme.com/developers/jamshaid/video/index.html">
+                                    <img class="img-responsive" src="~/Content/Images/logo.png" alt="Logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-xs-6 hidden-md hidden-lg text-right">
+                            <button type="button" class="btn btn-default btn-create-album">
+                                Create Album
+                            </button>
+                        </div>
+                        <div class="clearfix visible-sm"></div>
+                        <div class="clearfix visible-xs"></div>
+                        <div class="col-md-6 col-sm-4 border-right sm-border-top">
+                            <div class="search-box">
+                                <form method="post">
+                                    <input name="search" id="search" class="form-control" placeholder="Search Albums" required="" type="text">
+                                    <button type="submit" class="search-icon">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 sm-border-top">
+                            <div class="social-icon">
+                                <ul class="list-inline list-unstyled">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 border-left sm-border-top">
+                            <div class="login">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <svg class="img-responsive play-svg svg replaced-svg" height="512px" width="512px" xml:space="preserve" style="enable-background:new 0 0 513.32 513.32;" viewBox="0 0 513.32 513.32" y="0px" x="0px" id="Capa_1" version="1.1" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<g>
+                                        <g>
+                                        <path fill="#d82727" d="M346.491,316.547c49.193-29.944,81.275-83.414,81.275-145.44C427.767,76.998,350.768,0,256.66,0    S85.553,76.998,85.553,171.107c0,62.026,32.082,115.497,81.275,145.44C81.275,348.63,17.11,423.489,0,513.32h42.777    c21.388-98.386,109.081-171.107,213.883-171.107s192.495,72.72,213.883,171.107h42.777    C496.21,421.35,432.045,346.491,346.491,316.547z M128.33,171.107c0-70.581,57.749-128.33,128.33-128.33    s128.33,57.749,128.33,128.33s-57.749,128.33-128.33,128.33S128.33,241.688,128.33,171.107z"></path>
+	</g>
+</g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+<g></g>
+</svg>
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Welcome Guest <a class="login-toggle" href="#">Login</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Bar -->
+            <!-- Main Navigation -->
+            <div id="main-navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-sm-12">
+                            <div id="cssmenu">
+                                <div id="menu-button">Menu</div>
+                                <ul>
+                                    <li>@Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("RD. Congo", "RDC", "Articles", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("Linafoot", "Linafoot", "Articles", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("Monde", "Monde", "Articles", new { area = "" }, null)</li>
+                                    <li class="has-sub">
+                                        <span class="submenu-button"></span><a href="#"><i class="fi ion-compose"></i>CAF</a>
+                                        <ul>
+                                            <li>@Html.ActionLink("League des champions", "C1", "Articles", new { area = "" }, null)</li>
+                                            <li>@Html.ActionLink("Conféderation", "C2", "Articles", new { area = "" }, null)</li>
+                                        </ul>
+                                    </li>
+                                    <li>@Html.ActionLink("Admin", "Administration", "Articles", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-right hidden-sm hidden-xs">
+                            <button type="button" class="btn btn-default btn-create-album">
+                                Create Album
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Navigation -->
+
+
+            @RenderBody()
+
+
+
+
+
+
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div style="visibility: visible; animation-duration: 0.5s; animation-name: fadeIn;" class="footer-about wow fadeIn" data-wow-duration="0.5s">
+                                <div class="vid-heading">
+                                    <span>About</span>
+                                    <div class="hding-bottm-line"></div>
+                                </div>
+                                <img class="img-responsive" src="~/Content/Images/logo.png" alt="Logo">
+                                <p>
+                                    Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                                    Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
+                                    ornare odio. Sed non  mauris vitae erat consequatauctor eu in elit.
+                                    Class aptent tac Duis sed odio s psum velit.
+                                </p>
+                                <ul class="bottom-social list-inline list-unstyled">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeIn;" class="bottom-post wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.2s">
+                                <div class="vid-heading">
+                                    <span>Latest Posts</span>
+                                    <div class="hding-bottm-line"></div>
+                                </div>
+                                <div class="latest-post">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="~/Content/Images/most-like-img-1.jpg" alt="video">
+                                        </div>
+                                        <div class="media-body">
+                                            <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Stalker Game</a></h1>
+                                            <p>
+                                                <span><i class="fa fa-comment"></i> 10</span>
+                                                <span><i class="fa fa-eye"></i> 534</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="~/Content/Images/most-like-img-2.jpg" alt="video">
+                                        </div>
+                                        <div class="media-body">
+                                            <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Martial Art</a></h1>
+                                            <p>
+                                                <span><i class="fa fa-comment"></i> 10</span>
+                                                <span><i class="fa fa-eye"></i> 534</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="~/Content/Images/most-like-img-3.jpg" alt="video">
+                                        </div>
+                                        <div class="media-body">
+                                            <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Streat Crime</a></h1>
+                                            <p>
+                                                <span><i class="fa fa-comment"></i> 10</span>
+                                                <span><i class="fa fa-eye"></i> 534</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeIn;" class="bottom-categories wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.4s">
+                                <div class="vid-heading">
+                                    <span>Categories</span>
+                                    <div class="hding-bottm-line"></div>
+                                </div>
+                                <ul class="category-list list-unstyled">
+                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Action</a></li>
+                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Adventure</a></li>
+                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">War</a></li>
+                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Romance</a></li>
+                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Comedy</a></li>
+                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Horror</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.6s; animation-name: fadeIn;" class="sendus wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.6s">
+                                <div class="vid-heading">
+                                    <span>Send Us Message</span>
+                                    <div class="hding-bottm-line"></div>
+                                </div>
+                                <div id="contact-form">
+                                    <div class="expMessage"></div>
+                                    <form novalidate="novalidate" class="send-form">
+                                        <input name="formInput[name]" id="name" class="form-control half-wdth-field" placeholder="Name" required="" type="text">
+                                        <input name="formInput[email]" id="email" class="form-control half-wdth-field pull-right" placeholder="Email" required="" type="email">
+
+                                        <textarea name="formInput[message]" id="message" class="form-control" rows="4" placeholder="Message" required=""></textarea>
+                                        <input name="action" value="submitform" type="hidden">
+                                        <div>
+                                            <button type="submit" value="submit" class="btn btn-send">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- copyright -->
+            <div id="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <p>
+                                Copyright 2016 by My Tube. All right reserved. Template by <a href="http://www.ewebcraft.com/">ewebcraft</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- copyright -->
+
+        </div>
+
+        @*<div id="login-box">
+                <i class="fa fa-remove login-toggle"></i>
+                <!-- Login from -->
+                <form class="user-form login-form form-active text-center">
+                    <h1 class="form-heading">Log in to your account</h1>
+                    <a href="#" class="btn btn-login w-facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                    <a href="#" class="btn btn-login w-twitter"><i class="fa fa-twitter"></i>Twitter</a>
+                    <p class="or-login">or</p>
+                    <div class="form-group">
+                        <input name="email" class="form-control" id="login-email" required="" type="email">
+                        <i class="fa fa-envelope input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <input name="password" class="form-control" id="login-password" required="" type="password">
+                        <i class="fa fa-key input-icon"></i>
+                    </div>
+                    <button type="submit" value="login" class="btn btn-block btn-login text-uppercase">
+                        Login
+                    </button>
+                    <p class="forgot-password">
+                        Forgot your password? <a href="#">Click here</a>
+                    </p>
+                    <p class="no-account">
+                        Don't have an account yet? <a id="signUp-frm-button" href="#">Sign Up</a>
+                    </p>
+                </form>
+
+                <!-- SignUp form -->
+                <form class="user-form signUp-form text-center">
+                    <h1 class="form-heading">Sign Up</h1>
+                    <a href="#" class="btn btn-login w-facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                    <a href="#" class="btn btn-login w-twitter"><i class="fa fa-twitter"></i>Twitter</a>
+                    <p class="or-login">or</p>
+                    <div class="form-group">
+                        <input name="email" class="form-control" id="signUp-email" required="" type="email">
+                        <i class="fa fa-envelope input-icon"></i>
+                    </div>
+                    <div class="form-group">
+                        <input name="password" class="form-control" id="signUp-password" required="" type="password">
+                        <i class="fa fa-key input-icon"></i>
+                    </div>
+                    <button type="submit" value="login" class="btn btn-block btn-login text-uppercase">
+                        Sign Up
+                    </button>
+                    <p class="forgot-password">
+                        Forgot your password? <a href="#">Click here</a>
+                    </p>
+                    <p class="no-account">
+                        You have an account allready? <a id="login-frm-button" href="#">Login</a>
+                    </p>
+                </form>
+            </div>*@
+
+
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

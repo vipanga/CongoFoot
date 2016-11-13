@@ -1,0 +1,215 @@
+﻿@model CongoFoot.Models.Article
+
+@{
+    ViewBag.Title = Model.Titre;
+}
+
+<!-- Inner page Bar -->
+<div id="page-bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12">
+                <div class="page-title">
+                    <h1 class="text-uppercase">@Html.DisplayFor(model => model.Categorie)</h1>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-12 text-right">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="#"><i class="fi ion-ios-home"></i>Accueil</a>
+                    </li>
+                    <li class="active">@Html.DisplayFor(model => model.Categorie)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Inner page Bar -->
+<!-- Secondary Section -->
+
+<div id="video-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-8">
+                <div class="vid-detail-container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="blog-detail-img">
+                                <img class="img-responsive" src="/Content/Images/blog-detail-img.jpg" alt="blog image">
+                            </div>
+                            <div class="vid-text">
+                                <p><span>Par</span> <a href="#">@Html.DisplayFor(model => model.Auteur)</a></p>
+                                <h1>@Html.DisplayFor(model => model.Titre)</h1>
+                            </div>
+                            <div class="video-info-bar blog-info-bar">
+                                <ul class="list-inline list-unstyled info-ul">
+                                    <li><i class="fa fa-calendar"></i>@Html.DisplayFor(model => model.DatePublication)</li>
+                                    <li><i class="fa fa-eye"></i>@Html.DisplayFor(model => model.Categorie)</li>
+                                    <li><i class="fa fa-thumbs-up"></i>457689</li>
+                                    <li><i class="fa fa-comments"></i>4576</li>
+                                    <li class="pull-right sharing-drop"><button class="btn"></button></li>
+                                </ul>
+                                <ul class="list-unstyled list-inline pull-right text-right sharing-bar">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="video-detail-text">
+                                <p>
+                                   @Html.DisplayFor(model => model.Contenu)
+                                </p>
+                            </div>
+                            <div id="comment-frm-container">
+                                <div class="vid-heading overflow-hidden">
+                                    <span style="visibility: visible; animation-duration: 0.8s; animation-name: fadeInUp;" class="wow fadeInUp" data-wow-duration="0.8s">Leave a comment</span>
+                                    <div style="visibility: visible; animation-duration: 0.8s; animation-name: zoomIn;" class="hding-bottm-line wow zoomIn" data-wow-duration="0.8s"></div>
+                                </div>
+                                <form class="comment-form">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input name="comment-user-name" class="form-control" id="cmnt-user-name" placeholder="NAME" required="" type="text">
+                                                <div class="input-top-line"></div>
+                                                <div class="input-bottom-line"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input name="comment-user-email" class="form-control" id="cmnt-user-email" placeholder="EMAIL" required="" type="email">
+                                                <div class="input-top-line"></div>
+                                                <div class="input-bottom-line"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <textarea name="comment-user-message" id="cmnt-user-msg" rows="4" class="form-control" placeholder="MESSAGE" required=""></textarea>
+                                                <div class="input-top-line"></div>
+                                                <div class="input-bottom-line"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <button type="submit" class="btn btn-snd">
+                                                Poster Commentaire
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- bar lateral -->
+            <div class="col-md-3 col-sm-4">
+                <div class="sidebar">
+                    <div class="sidebar-vid most-liked">
+                        <h1 class="sidebar-heading">Fil Info</h1>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="~/Content/Images/most-liked-img-s1.jpg" alt="video">
+                            </div>
+                            <div class="media-body">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Journey</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="~/Content/Images/most-liked-img-s2.jpg" alt="video">
+                            </div>
+                            <div class="media-body">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Magic</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="~/Content/Images/most-liked-img-s3.jpg" alt="video">
+                            </div>
+                            <div class="media-body">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Runner</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <img src="~/Content/Images/most-liked-img-s4.jpg" alt="video">
+                            </div>
+                            <div class="media-body">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Fantasy</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="sidebar-vid most-viewd">
+                        <h1 class="sidebar-heading">Most Viewed</h1>
+                        <div class="most-viewd-container">
+                            <div class="most-viewd-img">
+                                <img class="img-responsive" src="~/Content/Images/most-viewd-1.jpg" alt="video">
+                            </div>
+                            <div class="most-viewd-text">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Human Rights Violation</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="most-viewd-container">
+                            <div class="most-viewd-img">
+                                <img class="img-responsive" src="~/Content/Images/most-viewd-2.jpg" alt="video">
+                            </div>
+                            <div class="most-viewd-text">
+                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">War Video Compilation</a></h1>
+                                <p>
+                                    <span><i class="fa fa-comment"></i> 10</span>
+                                    <span><i class="fa fa-eye"></i> 534</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tags">
+                        <h1 class="sidebar-heading">Tags</h1>
+                        <ul class="list-inline list-unstyled">
+                            <li><a href="#">3D</a></li>
+                            <li><a href="#">Animals &amp; Birds</a></li>
+                            <li><a href="#">HD</a></li>
+                            <li><a href="#">Horror</a></li>
+                            <li><a href="#">Art</a></li>
+                            <li><a href="#">Self</a></li>
+                            <li><a href="#">HD Songs</a></li>
+                            <li><a href="#">Comedy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- bar lateral -->
+
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Secondary Section -->
