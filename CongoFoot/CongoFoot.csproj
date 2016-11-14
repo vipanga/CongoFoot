@@ -227,6 +227,14 @@
     <Compile Include="Migrations\201610190902095_001.Designer.cs">
       <DependentUpon>201610190902095_001.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611141109559_AjoutDateModifcationArticle.cs" />
+    <Compile Include="Migrations\201611141109559_AjoutDateModifcationArticle.Designer.cs">
+      <DependentUpon>201611141109559_AjoutDateModifcationArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141251501_ChangerDateNonRequise.cs" />
+    <Compile Include="Migrations\201611141251501_ChangerDateNonRequise.Designer.cs">
+      <DependentUpon>201611141251501_ChangerDateNonRequise.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -369,21 +377,21 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout_BU.cshtml" />
-    <Content Include="Views\Articles\Create.cshtml" />
-    <Content Include="Views\Articles\Delete.cshtml" />
-    <Content Include="Views\Articles\Details_BU.cshtml" />
-    <Content Include="Views\Articles\Edit.cshtml" />
-    <Content Include="Views\Articles\Index_BU.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index - BU.cshtml" />
+    <Content Include="Views\Articles\Administration.cshtml" />
     <Content Include="Views\Articles\C1.cshtml" />
     <Content Include="Views\Articles\C2.cshtml" />
+    <Content Include="Views\Articles\Create.cshtml" />
+    <Content Include="Views\Articles\Delete.cshtml" />
     <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Articles\Details_BU.cshtml" />
+    <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\Articles\Index_BU.cshtml" />
     <Content Include="Views\Articles\Linafoot.cshtml" />
     <Content Include="Views\Articles\Monde.cshtml" />
     <Content Include="Views\Articles\RDC.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Articles\Administration.cshtml" />
-    <Content Include="Views\Home\Index - BU.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -395,6 +403,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610190902095_001.resx">
       <DependentUpon>201610190902095_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141109559_AjoutDateModifcationArticle.resx">
+      <DependentUpon>201611141109559_AjoutDateModifcationArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141251501_ChangerDateNonRequise.resx">
+      <DependentUpon>201611141251501_ChangerDateNonRequise.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

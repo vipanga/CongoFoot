@@ -20,7 +20,7 @@ namespace CongoFoot.Controllers
 
             //return View();
 
-            return View(db.Articles.ToList().OrderByDescending(i => i.ID));
+            return View(db.Articles.ToList().OrderByDescending(i => i.DatePublication).Take(18));
         }
     }
 }

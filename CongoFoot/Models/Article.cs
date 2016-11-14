@@ -10,7 +10,7 @@ namespace CongoFoot.Models
     {
         public int ID { get; set; }
 
-        [StringLength(60, ErrorMessage = "Le titre doit comprendre 60 caractères maximum")]
+        [StringLength(60, ErrorMessage = "Le titre doit comprendre 200 caractères maximum")]
         [Display(Name = "Titre")]
         [Required(ErrorMessage = "Titre requis")]
         public string Titre { get; set; }
@@ -21,17 +21,21 @@ namespace CongoFoot.Models
         public string Auteur { get; set; }
 
         [Display(Name = "Date Publication")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Required(ErrorMessage = "Date requise")]
         public DateTime? DatePublication { get; set; }
+
+        [Display(Name = "Date Modification")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? DateModification { get; set; }
 
         [StringLength(60, ErrorMessage = "L'URL ne doit pas comprendre plus de 60 caractères")]
         [Display(Name = "URL")]
         public string UrlImage { get; set; }
 
         [DataType(DataType.MultilineText)]
-        [StringLength(5000, ErrorMessage = "Le contenu de l'article ne doit pas depasser 5000 caracteres")]
+        [StringLength(5000, ErrorMessage = "Le contenu de l'article ne doit pas depasser 15000 caracteres")]
         public string Contenu { get; set; }
 
         [Required(ErrorMessage = "Catégorie requise")]

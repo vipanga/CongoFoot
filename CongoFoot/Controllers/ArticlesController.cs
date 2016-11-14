@@ -19,13 +19,15 @@ namespace CongoFoot.Controllers
         // GET: Articles
         public ActionResult Index()
         {
-            return View(db.Articles.ToList().OrderByDescending(i => i.ID));
+            //ViewBag.Title = "Home Page";
+
+            return View(db.Articles.ToList().OrderByDescending(i => i.DatePublication).Take(24));
         }
 
         // GET: Articles
         public ActionResult Administration()
         {
-            return View(db.Articles.ToList().OrderByDescending(i => i.ID));
+            return View(db.Articles.ToList().OrderByDescending(i => i.DatePublication));
         }
 
         // GET: Articles RDC
@@ -49,9 +51,9 @@ namespace CongoFoot.Controllers
                 s.Contenu.ToUpper().Contains(searchString.ToUpper()));
             }
 
-            articles = articles.OrderByDescending(a => a.ID);
+            articles = articles.OrderByDescending(a => a.DatePublication);
 
-            int pageSize = 1;
+            int pageSize = 9;
             int pageNumber = (page ?? 1);
             return View(articles.ToPagedList(pageNumber, pageSize));
         }
@@ -77,9 +79,9 @@ namespace CongoFoot.Controllers
                 s.Contenu.ToUpper().Contains(searchString.ToUpper()));
             }
 
-            articles = articles.OrderByDescending(a => a.ID);
+            articles = articles.OrderByDescending(a => a.DatePublication);
 
-            int pageSize = 1;
+            int pageSize = 9;
             int pageNumber = (page ?? 1);
             return View(articles.ToPagedList(pageNumber, pageSize));
         }
@@ -105,9 +107,9 @@ namespace CongoFoot.Controllers
                 s.Contenu.ToUpper().Contains(searchString.ToUpper()));
             }
 
-            articles = articles.OrderByDescending(a => a.ID);
+            articles = articles.OrderByDescending(a => a.DatePublication);
 
-            int pageSize = 1;
+            int pageSize = 9;
             int pageNumber = (page ?? 1);
             return View(articles.ToPagedList(pageNumber, pageSize));
         }
@@ -133,20 +135,39 @@ namespace CongoFoot.Controllers
                 s.Contenu.ToUpper().Contains(searchString.ToUpper()));
             }
 
-            articles = articles.OrderByDescending(a => a.ID);
+            articles = articles.OrderByDescending(a => a.DatePublication);
 
-            int pageSize = 1;
+            int pageSize = 9;
             int pageNumber = (page ?? 1);
             return View(articles.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Articles C2
-        public ActionResult C2()
+        public ActionResult C2(string currentFilter, string searchString, int? page)
         {
-            //Recuperation de tous les articles de la coupe de la confederation
-            var articles = db.Articles.Where(i => i.Categorie.ToString() == "C2").OrderByDescending(i => i.ID).ToList();
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
-            return View(articles);
+            var articles = db.Articles.Where(i => i.Categorie.ToString() == "C2");
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                articles = articles.Where(s => s.Titre.ToUpper().Contains(searchString.ToUpper())
+                ||
+                s.Contenu.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            articles = articles.OrderByDescending(a => a.DatePublication);
+
+            int pageSize = 9;
+            int pageNumber = (page ?? 1);
+            return View(articles.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Articles/Details/5
@@ -175,8 +196,10 @@ namespace CongoFoot.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Titre,Auteur,DatePublication,UrlImage,Contenu,Categorie")] Article article)
+        public ActionResult Create([Bind(Include = "ID,Titre,Auteur,DatePublication,DateModification,UrlImage,Contenu,Categorie")] Article article)
         {
+            article.DatePublication = DateTime.Now;
+            article.DateModification = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Articles.Add(article);
@@ -207,8 +230,13 @@ namespace CongoFoot.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Titre,Auteur,DatePublication,UrlImage,Contenu,Categorie")] Article article)
+        public ActionResult Edit([Bind(Include = "ID,Titre,Auteur,DatePublication,DateModification,UrlImage,Contenu,Categorie")] Article article)
         {
+            if(article.DatePublication == null)
+            {
+                article.DatePublication = DateTime.Now;
+            }
+            article.DateModification = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Entry(article).State = EntityState.Modified;
