@@ -161,7 +161,7 @@ namespace CongoFoot.Controllers
             return View(articles.ToPagedList(pageNumber, pageSize));
         }
 
-        // GET: Articles C1
+        // GET: Articles C1 
         public ActionResult C1(string currentFilter, string searchString, int? page)
         {
             if (searchString != null)
