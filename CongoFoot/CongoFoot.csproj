@@ -392,6 +392,9 @@
     <Content Include="Views\Articles\Linafoot.cshtml" />
     <Content Include="Views\Articles\Monde.cshtml" />
     <Content Include="Views\Articles\RDC.cshtml" />
+    <Content Include="Views\Articles\Recherche.cshtml" />
+    <Content Include="Views\Shared\LeftBarView.cshtml" />
+    <Content Include="Views\Shared\DetailLeftBarView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

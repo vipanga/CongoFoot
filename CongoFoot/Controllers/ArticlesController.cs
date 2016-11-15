@@ -16,12 +16,53 @@ namespace CongoFoot.Controllers
     {
         private MyDbContext db = new MyDbContext();
 
+
+
+        public List<Article> GetAllArticles()
+        {
+            return (db.Articles.ToList().OrderByDescending(i => i.DatePublication).Take(6).ToList());
+        }
+
         // GET: Articles
         public ActionResult Index()
         {
             //ViewBag.Title = "Home Page";
 
+            ViewBag.AllArticles = GetAllArticles();
+
             return View(db.Articles.ToList().OrderByDescending(i => i.DatePublication).Take(24));
+        }
+
+        // GET: Articles Recherche
+        public ActionResult Recherche(string currentFilter, string searchString, int? page)
+        {
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
+            var articles = from a in db.Articles
+                           select a;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                articles = articles.Where(s => s.Titre.ToUpper().Contains(searchString.ToUpper())
+                ||
+                s.Contenu.ToUpper().Contains(searchString.ToUpper()));
+            }
+
+            articles = articles.OrderByDescending(a => a.DatePublication);
+
+            ViewBag.AllArticles = GetAllArticles();
+
+            int pageSize = 9;
+            int pageNumber = (page ?? 1);
+            return View(articles.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Articles
@@ -53,6 +94,8 @@ namespace CongoFoot.Controllers
 
             articles = articles.OrderByDescending(a => a.DatePublication);
 
+            ViewBag.AllArticles = GetAllArticles();
+
             int pageSize = 9;
             int pageNumber = (page ?? 1);
             return View(articles.ToPagedList(pageNumber, pageSize));
@@ -80,6 +123,8 @@ namespace CongoFoot.Controllers
             }
 
             articles = articles.OrderByDescending(a => a.DatePublication);
+
+            ViewBag.AllArticles = GetAllArticles();
 
             int pageSize = 9;
             int pageNumber = (page ?? 1);
@@ -109,6 +154,8 @@ namespace CongoFoot.Controllers
 
             articles = articles.OrderByDescending(a => a.DatePublication);
 
+            ViewBag.AllArticles = GetAllArticles();
+
             int pageSize = 9;
             int pageNumber = (page ?? 1);
             return View(articles.ToPagedList(pageNumber, pageSize));
@@ -136,6 +183,8 @@ namespace CongoFoot.Controllers
             }
 
             articles = articles.OrderByDescending(a => a.DatePublication);
+
+            ViewBag.AllArticles = GetAllArticles();
 
             int pageSize = 9;
             int pageNumber = (page ?? 1);
@@ -165,6 +214,8 @@ namespace CongoFoot.Controllers
 
             articles = articles.OrderByDescending(a => a.DatePublication);
 
+            ViewBag.AllArticles = GetAllArticles();
+
             int pageSize = 9;
             int pageNumber = (page ?? 1);
             return View(articles.ToPagedList(pageNumber, pageSize));
@@ -182,6 +233,9 @@ namespace CongoFoot.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.AllArticles = GetAllArticles();
+
             return View(article);
         }
 

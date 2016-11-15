@@ -41,12 +41,23 @@
                         <div class="clearfix visible-xs"></div>
                         <div class="col-md-6 col-sm-4 border-right sm-border-top">
                             <div class="search-box">
-                                <form method="post">
+                                @using (Html.BeginForm("Recherche", "Articles", FormMethod.Get))
+                                {
+                                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { id = "search", @class="form-control", placeholder="Recherche", required="", type="text"})
+                                    <button type="submit" class="search-icon">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                    @*<p>
+                                        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                                        <input type="submit" value="Search" />
+                                    </p>*@
+                                }
+                                @*<form method="post">
                                     <input name="search" id="search" class="form-control" placeholder="Search Albums" required="" type="text">
                                     <button type="submit" class="search-icon">
                                         <i class="fa fa-search"></i>
                                     </button>
-                                </form>
+                                </form>*@
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-4 sm-border-top">
@@ -63,7 +74,7 @@
                         <div class="col-md-2 col-sm-4 border-left sm-border-top">
                             <div class="login">
                                 <div class="media">
-                                    <div class="media-left">
+                                    @*<div class="media-left">
                                         <svg class="img-responsive play-svg svg replaced-svg" height="512px" width="512px" xml:space="preserve" style="enable-background:new 0 0 513.32 513.32;" viewBox="0 0 513.32 513.32" y="0px" x="0px" id="Capa_1" version="1.1" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
 <g>
                                         <g>
@@ -86,7 +97,7 @@
 <g></g>
 <g></g>
 </svg>
-                                    </div>
+                                    </div>*@
                                     <div class="media-body">
                                         <p>
                                             Welcome Guest <a class="login-toggle" href="#">Login</a>
