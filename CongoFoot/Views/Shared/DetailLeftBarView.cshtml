@@ -12,8 +12,7 @@
                     <img src="~/Content/Images/most-liked-img-s1.jpg" alt="video">
                 </div>*@
             <div class="media-body">
-                @*<h1>@Html.ActionLink(@article.Titre, "Details", new { id = @article.ID })</h1>*@
-                <h1>@article.Titre</h1>
+                <h1>@Html.ActionLink((string)article.Titre, "Details", new { id = article.ID })</h1>
                 <p>
                     <span>@article.DatePublication</span>
                     <span>@article.Categorie</span>

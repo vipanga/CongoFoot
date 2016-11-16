@@ -18,7 +18,7 @@ namespace CongoFoot.Controllers
 
 
 
-        public List<Article> GetAllArticles()
+        public ICollection<Article> GetAllArticles()
         {
             return (db.Articles.ToList().OrderByDescending(i => i.DatePublication).Take(6).ToList());
         }
