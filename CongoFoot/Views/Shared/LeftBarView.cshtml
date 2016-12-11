@@ -2,68 +2,174 @@
 
 <!-- bar lateral -->
 
-        <div class="sidebar-vid most-liked">
-            <h1 class="sidebar-heading">Fil Info</h1>
+<div class="sidebar-vid most-liked">
+    <h1 class="sidebar-heading">Fil Info</h1>
 
-            @foreach (var article in ViewBag.AllArticles)
+    @foreach (var article in ViewBag.AllArticles)
             {
-                <div class="media">
-                    @*<div class="media-left">
-                            <img src="~/Content/Images/most-liked-img-s1.jpg" alt="video">
-                        </div>*@
-                    <div class="media-body">
-                        <h1>@Html.ActionLink((string)article.Titre, "Details", new { id = article.ID })</h1>
-                        <p>
-                            <span>@article.DatePublication</span>
-                            <span>@article.Categorie</span>
-                        </p>
-                    </div>
-                </div>
-            }
-        </div>
-
-
-        <div class="sidebar-vid most-viewd">
-            <h1 class="sidebar-heading">Most Viewed</h1>
-            <div class="most-viewd-container">
-                <div class="most-viewd-img">
-                    <img class="img-responsive" src="~/Content/Images/most-viewd-1.jpg" alt="video">
-                </div>
-                <div class="most-viewd-text">
-                    <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Human Rights Violation</a></h1>
-                    <p>
-                        <span><i class="fa fa-comment"></i> 10</span>
-                        <span><i class="fa fa-eye"></i> 534</span>
-                    </p>
-                </div>
-            </div>
-            <div class="most-viewd-container">
-                <div class="most-viewd-img">
-                    <img class="img-responsive" src="~/Content/Images/most-viewd-2.jpg" alt="video">
-                </div>
-                <div class="most-viewd-text">
-                    <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">War Video Compilation</a></h1>
-                    <p>
-                        <span><i class="fa fa-comment"></i> 10</span>
-                        <span><i class="fa fa-eye"></i> 534</span>
-                    </p>
-                </div>
+        <div class="media">
+            @*<div class="media-left">
+                    <img src="~/Content/Images/most-liked-img-s1.jpg" alt="video">
+                </div>*@
+            <div class="media-body">
+                <h1>@Html.ActionLink((string)article.Titre, "Details", new { id = article.ID })</h1>
+                <p>
+                    <span>@article.DatePublication</span>
+                    <span>@article.Categorie</span>
+                </p>
             </div>
         </div>
+    }
+</div>
 
 
-        <div class="tags">
-            <h1 class="sidebar-heading">Tags</h1>
-            <ul class="list-inline list-unstyled">
-                <li><a href="#">3D</a></li>
-                <li><a href="#">Animals &amp; Birds</a></li>
-                <li><a href="#">HD</a></li>
-                <li><a href="#">Horror</a></li>
-                <li><a href="#">Art</a></li>
-                <li><a href="#">Self</a></li>
-                <li><a href="#">HD Songs</a></li>
-                <li><a href="#">Comedy</a></li>
-            </ul>
+<div class="sidebar-vid most-viewd">
+    <h1 class="sidebar-heading">Classement Zone Est</h1>
+
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Pos</th>
+                <th>Club</th>
+                <th>MJ</th>
+                <th>GD</th>
+                <th>Pts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Saga Balende</td>
+                <td>10</td>
+                <td>12</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>TP Mazembe</td>
+                <td>10</td>
+                <td>14</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>FC Lupopo</td>
+                <td>10</td>
+                <td>6</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>FC Simba</td>
+                <td>10</td>
+                <td>2</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Group Bazano</td>
+                <td>10</td>
+                <td>9</td>
+                <td>15</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    @*<div class="most-viewd-container">
+        <div class="most-viewd-img">
+            <img class="img-responsive" src="~/Content/Images/most-viewd-1.jpg" alt="video">
         </div>
+        <div class="most-viewd-text">
+            <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">Human Rights Violation</a></h1>
+            <p>
+                <span><i class="fa fa-comment"></i> 10</span>
+                <span><i class="fa fa-eye"></i> 534</span>
+            </p>
+        </div>
+    </div>
+    <div class="most-viewd-container">
+        <div class="most-viewd-img">
+            <img class="img-responsive" src="~/Content/Images/most-viewd-2.jpg" alt="video">
+        </div>
+        <div class="most-viewd-text">
+            <h1><a href="http://layerstheme.com/developers/jamshaid/video/video-detail.html">War Video Compilation</a></h1>
+            <p>
+                <span><i class="fa fa-comment"></i> 10</span>
+                <span><i class="fa fa-eye"></i> 534</span>
+            </p>
+        </div>
+    </div>*@
+</div>
+
+<div class="sidebar-vid most-viewd">
+    <h1 class="sidebar-heading">Classement Zone Ouest</h1>
+
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Pos</th>
+                <th>Club</th>
+                <th>MJ</th>
+                <th>GD</th>
+                <th>Pts</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>FC Renaissance</td>
+                <td>11</td>
+                <td>15</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>As V Club</td>
+                <td>11</td>
+                <td>12</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>DCMP</td>
+                <td>11</td>
+                <td>4</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>RCK</td>
+                <td>11</td>
+                <td>7</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Shark XI FC</td>
+                <td>11</td>
+                <td>2</td>
+                <td>16</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h1>@Html.ActionLink("Voir le classement complet Linafoot", "Linafoot", "Articles", new { area = "" }, null)</h1>
+</div>
+
+
+@*<div class="tags">
+    <h1 class="sidebar-heading">Tags</h1>
+    <ul class="list-inline list-unstyled">
+        <li><a href="#">3D</a></li>
+        <li><a href="#">Animals &amp; Birds</a></li>
+        <li><a href="#">HD</a></li>
+        <li><a href="#">Horror</a></li>
+        <li><a href="#">Art</a></li>
+        <li><a href="#">Self</a></li>
+        <li><a href="#">HD Songs</a></li>
+        <li><a href="#">Comedy</a></li>
+    </ul>
+</div>*@
 
 <!-- bar lateral -->

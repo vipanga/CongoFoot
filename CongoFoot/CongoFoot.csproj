@@ -48,6 +48,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageResizer.4.0.5\lib\net45\ImageResizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -235,6 +239,10 @@
     <Compile Include="Migrations\201611141251501_ChangerDateNonRequise.Designer.cs">
       <DependentUpon>201611141251501_ChangerDateNonRequise.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612111238112_AjoutMiniatureArticle.cs" />
+    <Compile Include="Migrations\201612111238112_AjoutMiniatureArticle.Designer.cs">
+      <DependentUpon>201612111238112_AjoutMiniatureArticle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -398,6 +406,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Minuature\2015\12\" />
+    <Folder Include="Content\Images\Originale\2015\12\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -412,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611141251501_ChangerDateNonRequise.resx">
       <DependentUpon>201611141251501_ChangerDateNonRequise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612111238112_AjoutMiniatureArticle.resx">
+      <DependentUpon>201612111238112_AjoutMiniatureArticle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
