@@ -156,33 +156,10 @@
             <div id="footer">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div style="visibility: visible; animation-duration: 0.5s; animation-name: fadeIn;" class="footer-about wow fadeIn" data-wow-duration="0.5s">
-                                <div class="vid-heading">
-                                    <span>About</span>
-                                    <div class="hding-bottm-line"></div>
-                                </div>
-                                <img class="img-responsive" src="~/Content/Images/logo.png" alt="Logo">
-                                <p>
-                                    Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                                    Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
-                                    ornare odio. Sed non  mauris vitae erat consequatauctor eu in elit.
-                                    Class aptent tac Duis sed odio s psum velit.
-                                </p>
-                                <ul class="bottom-social list-inline list-unstyled">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
+                        @*<div class="col-md-6 col-sm-6">
                             <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeIn;" class="bottom-post wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.2s">
                                 <div class="vid-heading">
-                                    <span>Latest Posts</span>
+                                    <span>derniers Posts</span>
                                     <div class="hding-bottm-line"></div>
                                 </div>
                                 <div class="latest-post">
@@ -224,27 +201,26 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
                         <div class="col-md-3 col-sm-6">
                             <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeIn;" class="bottom-categories wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.4s">
                                 <div class="vid-heading">
-                                    <span>Categories</span>
+                                    <span>catégories </span>
                                     <div class="hding-bottm-line"></div>
                                 </div>
                                 <ul class="category-list list-unstyled">
-                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Action</a></li>
-                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Adventure</a></li>
-                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">War</a></li>
-                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Romance</a></li>
-                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Comedy</a></li>
-                                    <li><a href="http://layerstheme.com/developers/jamshaid/video/category-listing.html">Horror</a></li>
+                                    <li>@Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("RD. Congo", "RDC", "Articles", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("Internationale", "Monde", "Articles", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("LdC CAF", "C1", "Articles", new { area = "" }, null)</li>
+                                    <li>@Html.ActionLink("Conféderation", "C2", "Articles", new { area = "" }, null)</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
                             <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.6s; animation-name: fadeIn;" class="sendus wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.6s">
                                 <div class="vid-heading">
-                                    <span>Send Us Message</span>
+                                    <span>Nous contacter</span>
                                     <div class="hding-bottm-line"></div>
                                 </div>
                                 <div id="contact-form">
@@ -264,6 +240,29 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div style="visibility: visible; animation-duration: 0.5s; animation-name: fadeIn;" class="footer-about wow fadeIn" data-wow-duration="0.5s">
+                                <div class="vid-heading">
+                                    <span>à propos</span>
+                                    <div class="hding-bottm-line"></div>
+                                </div>
+                                <img class="img-responsive" src="~/Content/Images/logo.png" alt="Logo">
+                                <p>
+                                    Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                                    Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
+                                    ornare odio. Sed non  mauris vitae erat consequatauctor eu in elit.
+                                    Class aptent tac Duis sed odio s psum velit.
+                                </p>
+                                <ul class="bottom-social list-inline list-unstyled">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,7 +273,7 @@
                     <div class="row">
                         <div class="col-sm-12 text-center">
                             <p>
-                                Copyright 2016 by My Tube. All right reserved. Template by <a href="http://www.ewebcraft.com/">ewebcraft</a>
+                                Copyright 2016 by IpKaTech. All right reserved. Template by <a href="http://www.ewebcraft.com/">ewebcraft</a>
                             </p>
                         </div>
                     </div>

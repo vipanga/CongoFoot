@@ -250,7 +250,7 @@ namespace CongoFoot.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Titre,Auteur,DatePublication,DateModification,UrlImage,Contenu,Categorie")] Article article)
+        public ActionResult Create([Bind(Include = "ID,Titre,Auteur,DatePublication,DateModification,UrlImageOriginale,UrlImageMiniature,Contenu,Categorie")] Article article)
         {
             article.DatePublication = DateTime.Now;
             article.DateModification = DateTime.Now;
@@ -284,9 +284,9 @@ namespace CongoFoot.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Titre,Auteur,DatePublication,DateModification,UrlImage,Contenu,Categorie")] Article article)
+        public ActionResult Edit([Bind(Include = "ID,Titre,Auteur,DatePublication,DateModification,UrlImageOriginale,UrlImageMiniature,Contenu,Categorie")] Article article)
         {
-            if(article.DatePublication == null)
+            if (article.DatePublication == null)
             {
                 article.DatePublication = DateTime.Now;
             }

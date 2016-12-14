@@ -21,7 +21,13 @@
             @Html.DisplayNameFor(model => model.DatePublication)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UrlImage)
+            @Html.DisplayNameFor(model => model.DateModification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlImageOriginale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlImageMiniature)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Contenu)
@@ -32,32 +38,39 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Titre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Auteur)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DatePublication)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UrlImage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Contenu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Categorie)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auteur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DatePublication)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateModification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlImageOriginale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlImageMiniature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contenu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorie)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
 
 </table>
