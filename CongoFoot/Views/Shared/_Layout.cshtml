@@ -43,28 +43,28 @@
                             <div class="search-box">
                                 @using (Html.BeginForm("Recherche", "Articles", FormMethod.Get))
                                 {
-                                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { id = "search", @class="form-control", placeholder="Recherche", required="", type="text"})
+                                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { id = "search", @class = "form-control", placeholder = "Recherche", required = "", type = "text" })
                                     <button type="submit" class="search-icon">
                                         <i class="fa fa-search"></i>
                                     </button>
                                     @*<p>
-                                        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-                                        <input type="submit" value="Search" />
-                                    </p>*@
+                                            Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                                            <input type="submit" value="Search" />
+                                        </p>*@
                                 }
                                 @*<form method="post">
-                                    <input name="search" id="search" class="form-control" placeholder="Search Albums" required="" type="text">
-                                    <button type="submit" class="search-icon">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </form>*@
+                                        <input name="search" id="search" class="form-control" placeholder="Search Albums" required="" type="text">
+                                        <button type="submit" class="search-icon">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </form>*@
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-4 sm-border-top">
                             <div class="social-icon">
                                 <ul class="list-inline list-unstyled">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/congofootrdc" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.twitter.com/congofootrdc" target="_blank"><i class="fa fa-twitter"></i></a></li>
                                     <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
                                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                     <li><a href="#"><i class="fa fa-youtube"></i></a></li>
@@ -75,29 +75,29 @@
                             <div class="login">
                                 <div class="media">
                                     @*<div class="media-left">
-                                        <svg class="img-responsive play-svg svg replaced-svg" height="512px" width="512px" xml:space="preserve" style="enable-background:new 0 0 513.32 513.32;" viewBox="0 0 513.32 513.32" y="0px" x="0px" id="Capa_1" version="1.1" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-<g>
+                                                                                <svg class="img-responsive play-svg svg replaced-svg" height="512px" width="512px" xml:space="preserve" style="enable-background:new 0 0 513.32 513.32;" viewBox="0 0 513.32 513.32" y="0px" x="0px" id="Capa_1" version="1.1" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                                         <g>
-                                        <path fill="#d82727" d="M346.491,316.547c49.193-29.944,81.275-83.414,81.275-145.44C427.767,76.998,350.768,0,256.66,0    S85.553,76.998,85.553,171.107c0,62.026,32.082,115.497,81.275,145.44C81.275,348.63,17.11,423.489,0,513.32h42.777    c21.388-98.386,109.081-171.107,213.883-171.107s192.495,72.72,213.883,171.107h42.777    C496.21,421.35,432.045,346.491,346.491,316.547z M128.33,171.107c0-70.581,57.749-128.33,128.33-128.33    s128.33,57.749,128.33,128.33s-57.749,128.33-128.33,128.33S128.33,241.688,128.33,171.107z"></path>
-	</g>
-</g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-<g></g>
-</svg>
-                                    </div>*@
+                                                                                <g>
+                                                                                <path fill="#d82727" d="M346.491,316.547c49.193-29.944,81.275-83.414,81.275-145.44C427.767,76.998,350.768,0,256.66,0    S85.553,76.998,85.553,171.107c0,62.026,32.082,115.497,81.275,145.44C81.275,348.63,17.11,423.489,0,513.32h42.777    c21.388-98.386,109.081-171.107,213.883-171.107s192.495,72.72,213.883,171.107h42.777    C496.21,421.35,432.045,346.491,346.491,316.547z M128.33,171.107c0-70.581,57.749-128.33,128.33-128.33    s128.33,57.749,128.33,128.33s-57.749,128.33-128.33,128.33S128.33,241.688,128.33,171.107z"></path>
+                                            </g>
+                                        </g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        <g></g>
+                                        </svg>
+                                                                            </div>*@
                                     <div class="media-body">
                                         <p>
                                             Welcome Guest <a class="login-toggle" href="#">Login</a>
@@ -157,51 +157,51 @@
                 <div class="container">
                     <div class="row">
                         @*<div class="col-md-6 col-sm-6">
-                            <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeIn;" class="bottom-post wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.2s">
-                                <div class="vid-heading">
-                                    <span>derniers Posts</span>
-                                    <div class="hding-bottm-line"></div>
+                                <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeIn;" class="bottom-post wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.2s">
+                                    <div class="vid-heading">
+                                        <span>derniers Posts</span>
+                                        <div class="hding-bottm-line"></div>
+                                    </div>
+                                    <div class="latest-post">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="~/Content/Images/most-like-img-1.jpg" alt="video">
+                                            </div>
+                                            <div class="media-body">
+                                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Stalker Game</a></h1>
+                                                <p>
+                                                    <span><i class="fa fa-comment"></i> 10</span>
+                                                    <span><i class="fa fa-eye"></i> 534</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="~/Content/Images/most-like-img-2.jpg" alt="video">
+                                            </div>
+                                            <div class="media-body">
+                                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Martial Art</a></h1>
+                                                <p>
+                                                    <span><i class="fa fa-comment"></i> 10</span>
+                                                    <span><i class="fa fa-eye"></i> 534</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="~/Content/Images/most-like-img-3.jpg" alt="video">
+                                            </div>
+                                            <div class="media-body">
+                                                <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Streat Crime</a></h1>
+                                                <p>
+                                                    <span><i class="fa fa-comment"></i> 10</span>
+                                                    <span><i class="fa fa-eye"></i> 534</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="latest-post">
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img src="~/Content/Images/most-like-img-1.jpg" alt="video">
-                                        </div>
-                                        <div class="media-body">
-                                            <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Stalker Game</a></h1>
-                                            <p>
-                                                <span><i class="fa fa-comment"></i> 10</span>
-                                                <span><i class="fa fa-eye"></i> 534</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img src="~/Content/Images/most-like-img-2.jpg" alt="video">
-                                        </div>
-                                        <div class="media-body">
-                                            <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Martial Art</a></h1>
-                                            <p>
-                                                <span><i class="fa fa-comment"></i> 10</span>
-                                                <span><i class="fa fa-eye"></i> 534</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <img src="~/Content/Images/most-like-img-3.jpg" alt="video">
-                                        </div>
-                                        <div class="media-body">
-                                            <h1><a href="http://layerstheme.com/developers/jamshaid/video/blog-detail.html">Streat Crime</a></h1>
-                                            <p>
-                                                <span><i class="fa fa-comment"></i> 10</span>
-                                                <span><i class="fa fa-eye"></i> 534</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>*@
+                            </div>*@
                         <div class="col-md-3 col-sm-6">
                             <div style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeIn;" class="bottom-categories wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.4s">
                                 <div class="vid-heading">
@@ -248,18 +248,20 @@
                                 </div>
                                 <img class="img-responsive" src="~/Content/Images/logo.png" alt="Logo">
                                 <p>
-                                    Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                                    Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
-                                    ornare odio. Sed non  mauris vitae erat consequatauctor eu in elit.
-                                    Class aptent tac Duis sed odio s psum velit.
+                                    Congo Foot est un site dédié à l'actualité du football Congolais.
+                                    Retrouvez chaque jour les résultats des matchs de foot disputés
+                                    dans le championnat local(Linafoot), équipe nationale, et de
+                                    partout dans le monde. Analyse des équipes, commentaire des buts
+                                    et scores, interview des joueurs et entraineurs de foot,
+                                    c’est toute l'actualité du foot qui est décortiquée.
                                 </p>
                                 <ul class="bottom-social list-inline list-unstyled">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://www.facebook.com/congofootrdc" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.twitter.com/congofootrdc" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
